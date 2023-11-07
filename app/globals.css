@@ -1,0 +1,142 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,300;6..12,400;6..12,500;6..12,600;6..12,700;6..12,800;6..12,900;6..12,1000&display=swap");
+
+@layer tailwind-base, primereact, tailwind-utilities;
+
+@layer tailwind-base {
+  @tailwind base;
+}
+
+@layer tailwind-utilities {
+  @tailwind components;
+  @tailwind utilities;
+}
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+* {
+  font-family: "Nunito Sans", sans-serif;
+}
+body {
+  color: rgb(var(--foreground-rgb));
+}
+
+@layer components {
+  .navbar-item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    color: #c4c5d7;
+    font-size: 15px;
+    padding-inline: 45px;
+  }
+  .navbar-item.active-link {
+    color: #f9f9fd;
+    font-weight: 700;
+  }
+  .navbar-item.active-link:first-child::after {
+    background-color: #ff5722;
+  }
+  .navbar-item.active-link:nth-child(2)::after {
+    background-color: #ff5722;
+  }
+
+  .navbar-item:hover {
+    color: #f9f9fd;
+  }
+
+  .navbar-item:first-child::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2.5px; /* Negative height */
+    width: 100%;
+    height: 5px; /* Height of border */
+    background-color: #c4c5d7;
+    border-bottom-left-radius: 5rem;
+    border-top-left-radius: 5rem;
+  }
+
+  .navbar-item:nth-child(2):after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2.5px; /* Negative height */
+    width: 100%;
+    height: 5px; /* Height of border */
+    background-color: #c4c5d7;
+    border-bottom-right-radius: 5rem;
+    border-top-right-radius: 5rem;
+  }
+}
+
+.p-datatable-thead {
+  border-radius: 10px !important;
+}
+
+.p-datatable-wrapper {
+  border: 1px solid #ecedf5;
+  border-top-left-radius: 10px !important;
+  border-top-right-radius: 10px !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th {
+  border: none !important;
+  color: #0c0d25 !important;
+  background-color: #f9f9fd !important;
+}
+
+.p-datatable .p-datatable-thead > tr > th:first-child {
+  border-top-left-radius: 10px !important;
+  border: none;
+}
+
+.p-datatable .p-datatable-thead > tr > th:last-child {
+  border-top-right-radius: 10px;
+}
+
+.p-datatable .p-datatable-tbody > tr > td:first-child {
+  border-left: none !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td:last-child {
+  border-right: none !important;
+}
+
+.p-datatable .p-datatable-tbody > tr > td {
+  border-color: #ecedf5 !important;
+  color: #5f6b8a !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:first-child {
+  border-top: 1px solid #ecedf5 !important;
+}
+
+.p-datatable .p-datatable-tbody > tr:last-child > td {
+  border-bottom: none !important;
+}
+
+.p-password i {
+  display: flex;
+}
+
+.p-datepicker-trigger {
+  border: none !important;
+  background-color: white !important;
+  color: #5f6b8a !important;
+  border-bottom-left-radius: 0 !important;
+  border-top-left-radius: 0 !important;
+}
